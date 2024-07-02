@@ -41,7 +41,7 @@ const Aside = ({ asideActivo }: { asideActivo: boolean }) => {
 	return (
 		<div
 			className={cn(
-				"bg-[#6a77b4]  text-white overflow-hidden transition-all ease-linear",
+				"bg-[#7B8DDB]  text-white overflow-hidden transition-all ease-linear",
 				asideActivo ? "w-[250px]" : "w-[60px]"
 			)}
 		>
