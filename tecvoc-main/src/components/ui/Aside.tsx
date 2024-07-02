@@ -97,6 +97,43 @@ const Aside = ({ asideActivo }: { asideActivo: boolean }) => {
       </nav>
     </div>
   );
+
+	return (
+		<div
+			className={cn(
+				"bg-[#7B8DDB]  text-white overflow-hidden transition-all ease-linear",
+				asideActivo ? "w-[250px]" : "w-[60px]"
+			)}
+		>
+			<div className='w-full h-[70px] flex justify-center items-center'>
+				<div className='relative h-[65px] w-full object-contain'>
+					<img
+						src={
+							asideActivo
+								? "/images/logo.png"
+								: "/images/logotipo.png"
+						}
+						alt='logo'
+						className='absolute w-full h-full top-0 left-0 object-contain'
+					/>
+				</div>
+			</div>
+			<nav className='pt-10'>
+				<ul>
+					{navegacion.map((navitem) => (
+						<NavItem
+							key={navitem.id}
+							url={navitem.url}
+							icono={navitem.icono}
+							label={navitem.label}
+							asideActivo={asideActivo}
+						/>
+					))}
+				</ul>
+			</nav>
+		</div>
+	);
+
 };
 
 interface NavItemContrato {

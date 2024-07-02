@@ -12,6 +12,8 @@ import VideosDashboard from "./components/pages/Dashboard/VideosDashboard";
 import UserRegister from "./components/pages/Register/UserRegister";
 import Login from "./components/pages/Login/Login";
 import ResultadosObtenidos from "./components/ResultadosObtenidos";
+import Nosotros from './components/pages/Nosotros';  
+import Instrucciones from './components/pages/Instrucciones';  
 import PreguntasCRUD from "./components/pages/Admin/PreguntasCRUD";
 import ResultadosCRUD from "./components/pages/Admin/ResultadosCRUD";
 import UsersCRUD from "./components/pages/Admin/UsersCrud";
@@ -24,7 +26,8 @@ ReactDOM.createRoot(document.getElementById("cintia")!).render(
 		<Route path='/' element={<Landing />} />
 		<Route path='/login' element={<Login />} />
 		<Route path='/register' element={<UserRegister />} />
-		
+		<Route path="/nosotros" element={<Nosotros />} /> 
+				<Route path="/instrucciones" element={<Instrucciones />} />  
 		<Route path='/dashboard/*' element={<Dashboard />}>
 			<Route index element={<InicioDashboard />} />
 			<Route path='test' element={<TestDashboard />} />
