@@ -30,7 +30,13 @@ const Login = () => {
             if (response.ok) {
                 console.log('Login successful:', data);
                 login(data.user); // Actualiza el contexto con los datos del usuario
-                navigate('/dashboard');
+                
+                // Redirige según el rol del usuario
+                if (data.user.role === "admin") {
+                    navigate('/dashboard/preguntas');
+                } else {
+                    navigate('/dashboard');
+                }
             } else {
                 throw new Error(data.message || 'Failed to login');
             }

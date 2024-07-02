@@ -49,7 +49,13 @@ const UserRegister = () => {
             const data = await response.json();
             if (response.ok) {
                 setUser(data.user); // Asegúrate de que esto corresponde a la estructura esperada.
-                navigate('/dashboard'); // Navega al dashboard después del registro
+                
+                // Redirige según el rol del usuario
+                if (data.user.role === "admin") {
+                    navigate('/dashboard/preguntas');
+                } else {
+                    navigate('/dashboard');
+                }
             } else {
                 throw new Error(data.message || 'Failed to register');
             }
